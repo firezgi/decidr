@@ -1,9 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
-  const[listContainer,setListContainer]=useState([])
+  const [listContainer, setListContainer] = useState([]);
   return (
     <div className="App">
       <header className="App-header">
