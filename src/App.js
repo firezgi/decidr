@@ -17,6 +17,7 @@ function App() {
       <AddItem
       listContainer={listContainer} 
       setListContainer={setListContainer} />
+      <button onClick={selectItem}></button>
     </div>
   );
 }
