@@ -18,7 +18,6 @@ function App() {
       <AddItem
       listContainer={listContainer} 
       setListContainer={setListContainer} />
-      <DisplayList listContainer={listContainer}/>
       <div className="selectedItem">
       {selectedItem.length?
       <p>{selectedItem}</p>:
