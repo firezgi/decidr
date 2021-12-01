@@ -11,7 +11,7 @@ function App() {
   }
   return (
     <div className="App">
-      <header>Decidr</header>
+      <header className="App-header">Decidr</header>
 
 
       <AddItem
