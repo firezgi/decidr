@@ -1,3 +1,4 @@
+import './AddItem.css';
 import React, { useState } from 'react';
 
 function AddItem({listContainer,setListContainer}) {
@@ -17,8 +18,10 @@ function AddItem({listContainer,setListContainer}) {
             placeholder="Add an item"
             />
             <button id="submit-item" onClick={formSubmit} type="submit" >Add Item</button>
-            <div>
-            {listContainer}
+            <div >
+            {listContainer.map((list,index)=>
+                <p className="listItem" key={index}>{list}</p>
+            )}
                 </div>
         </form>
     )
