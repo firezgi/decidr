@@ -19,9 +19,7 @@ function AddItem({listContainer,setListContainer}) {
             />
             <button id="submit-item" onClick={formSubmit} type="submit" >Add Item</button>
             <div >
-            {listContainer.map((list,index)=>
-                <p className="listItem" key={index}>{list}</p>
-            )}
+            
                 </div>
         </form>
     )

@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import AddItem from './components/AddItem';
+import DisplayList from './components/DisplayList';
 
 function App() {
   const [listContainer,setListContainer]=useState([]);
@@ -17,6 +18,7 @@ function App() {
       <AddItem
       listContainer={listContainer} 
       setListContainer={setListContainer} />
+      <DisplayList listContainer={listContainer}/>
       <div className="selectedItem">
       {selectedItem}
       </div>
