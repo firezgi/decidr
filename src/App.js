@@ -17,7 +17,13 @@ function App() {
       <AddItem
       listContainer={listContainer} 
       setListContainer={setListContainer} />
-      <button onClick={selectItem}></button>
+      <div className="selectedItem">
+      {selectedItem}
+      </div>
+      <button onClick={selectItem}>Select an Item</button>
+      
+      
+      
     </div>
   );
 }
