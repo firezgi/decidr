@@ -20,7 +20,9 @@ function App() {
       setListContainer={setListContainer} />
       <DisplayList listContainer={listContainer}/>
       <div className="selectedItem">
-      {selectedItem}
+      {selectedItem.length?
+      <p>{selectedItem}</p>:
+      <DisplayList listContainer={listContainer}/>}
       </div>
       <button onClick={selectItem}>Select an Item</button>
       
