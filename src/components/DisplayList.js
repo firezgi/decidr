@@ -5,9 +5,9 @@ function DisplayList({listContainer}) {
         <li className="listItem" key={index}>{item}</li>
     )
     return (
-        <div>
+        <ol id="display-list">
             {displayList}
-        </div>
+        </ol>
     )
 }
 

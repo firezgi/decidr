@@ -10,9 +10,8 @@ function AddItem({listContainer,setListContainer}) {
         
     }
     return (
-        <form onSubmit={formSubmit}>
+        <form onSubmit={formSubmit}  id="add-item">
             <input 
-            id="add-item" 
             value={newItem} 
             onChange={e=>setNewItem(e.target.value)}
             placeholder="Add an item"

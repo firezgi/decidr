@@ -1,13 +1,13 @@
+*{
+  box-sizing: border-box;
+}
 .App {
+  display:flex;
+  flex-direction: column;
   text-align: center;
+  align-items: stretch;
+  max-height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
 .App-header {
   background-color: #0e0bc0;
   height: 50px;
@@ -27,7 +27,42 @@
   margin: auto;
   margin-bottom: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+main{
+  overflow:hidden;
 }
+/* main #add-item{
+  height:50px;
+
+}
+main #display-list{
+  max-height:calc(100%-50px);
+  overflow:auto;
+} */
+footer{
+  height:50px;
+
+}
+
+@media screen and (max-width:800px){
+  .App {
+    height: 100vh;
+  }
+
+  header{
+    flex:0 0 auto;
+  }
+  #add-item{
+    
+    flex:0 0 auto;
+  }
+  main{
+    flex:1 1 auto;
+
+  }
+  footer{
+    flex:0 0 auto;
+  
+  }
+  
+}
+
