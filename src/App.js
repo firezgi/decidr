@@ -8,7 +8,7 @@ function App() {
   const [selectedItem,setSelectedItem]=useState("");
   const selectItem=()=>{
     const random=Math.floor(Math.random()*listContainer.length);
-    setSelectedItem(listContainer[random]);
+    setSelectedItem(listContainer.length>0?listContainer[random]:"");
   }
   return (
     <div className="App">
