@@ -27,6 +27,7 @@ function App() {
           listContainer={listContainer}
           setListContainer={setListContainer}
         />
+        <div>{listContainer.length<2 && <h4>Please enter atleast two items</h4>}</div>
         <div >
           {selectedItem.length ? (
             <p className="selectedItem">{selectedItem}</p>
