@@ -1,8 +1,18 @@
-import React from 'react'
-
-function DisplayList({listContainer}) {
+import React, { useState } from 'react'
+import "../App.css";
+function DisplayList({listContainer,setListContainer}) {
+    const deleteHandler=(ind)=> setListContainer( listContainer.filter((item,i) => i!==ind ))
+    
     const displayList=listContainer.map((item,index)=>
-        <li className="listItem" key={index}>{item}</li>
+        <div key={index} >
+
+        <li>{item}</li>
+        <button onClick={()=>deleteHandler(index)}>delete</button>
+
+        </div>
+
+    
+        
     )
     return (
         <ol id="display-list">

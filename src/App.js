@@ -23,7 +23,9 @@ function App() {
           {selectedItem.length ? (
             <p>{selectedItem}</p>
           ) : (
-            <DisplayList listContainer={listContainer} />
+            <DisplayList 
+            listContainer={listContainer}
+            setListContainer={setListContainer} />
           )}
         </div>
       </main>
