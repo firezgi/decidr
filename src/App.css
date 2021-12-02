@@ -26,20 +26,45 @@
   border-radius: 10%;
   margin: auto;
   margin-bottom: 10px;
+  font-size: 2em;
 }
+/* .listItem { */
+  /* background-color:#510875; */
+  /* height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(5px + 2vmin);
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 5%;
+  width:80%;
+  margin:auto;
+  margin-bottom: 10px;
+  margin-top: 10px; */
+  
+/* } */
 main{
   overflow:hidden;
 }
-/* main #add-item{
-  height:50px;
-
+button{
+  background-color:#004ba1 ;
+  color: white;
+  border:solid black 1px;
+  border-radius: 3%;
 }
-main #display-list{
-  max-height:calc(100%-50px);
-  overflow:auto;
-} */
-footer{
+ #add-item{
   height:50px;
+ 
+}
+#display-list li{
+  /* display: */
+  overflow:auto;
+} 
+footer{
+  /* height:50px; */
+  padding:5px;
 
 }
 
