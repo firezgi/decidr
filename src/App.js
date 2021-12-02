@@ -14,15 +14,16 @@ function App() {
     <div className="App">
       <header className="App-header">Decidr</header>
       {listContainer.length?<p>Number of Items: {listContainer.length}</p>:""}
+  
 
       <main>
         <AddItem
           listContainer={listContainer}
           setListContainer={setListContainer}
         />
-        <div className="selectedItem">
+        <div >
           {selectedItem.length ? (
-            <p>{selectedItem}</p>
+            <p className="selectedItem">{selectedItem}</p>
           ) : (
             <DisplayList 
             listContainer={listContainer}

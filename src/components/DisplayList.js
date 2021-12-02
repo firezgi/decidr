@@ -4,14 +4,12 @@ function DisplayList({listContainer,setListContainer}) {
     const deleteHandler=(ind)=> setListContainer( listContainer.filter((item,i) => i!==ind ))
     
     const displayList=listContainer.map((item,index)=>
-        <div key={index} >
+        <div className="listWrap"key={index} >
 
         <li>{item}</li>
         <button onClick={()=>deleteHandler(index)}>delete</button>
 
-        </div>
-
-    
+        </div>    
         
     )
     return (

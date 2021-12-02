@@ -23,10 +23,20 @@
   background-color: #0a0875;
   color: cornsilk;
   width: 80%;
-  border-radius: 10%;
+  border-radius: 5%;
   margin: auto;
   margin-bottom: 10px;
   font-size: 2em;
+  padding: 10px;
+}
+.listWrap{
+  background-color: rgb(16, 10, 92);
+  display:flex;
+  justify-content: space-between;
+  padding:10px;
+  margin-bottom:5px ;
+  font-size: 1.2em;
+  color: rgb(75, 143, 189);
 }
 /* .listItem { */
   /* background-color:#510875; */
@@ -58,9 +68,11 @@ button{
   height:50px;
  
 }
-#display-list li{
+#display-list ol{
   /* display: */
   overflow:auto;
+  background-color: rgb(16, 10, 92);
+  
 } 
 footer{
   /* height:50px; */
