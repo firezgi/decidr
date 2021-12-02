@@ -4,20 +4,35 @@ import React, { useState } from 'react';
 
 function AddItem({listContainer,setListContainer}) {
     const[newItem,setNewItem]=useState("");
-    const formSubmit=(event)=>{
+    const isDuplicated=( val) =>
+        listContainer.some((arrVal)=>  val.toLowerCase() === arrVal )
+    const checkInput = (event) => {
         event.preventDefault();
-        setListContainer([...listContainer,newItem])
-        setNewItem("")
-        
-    }
+        if(newItem.length === 0){
+            setListContainer([...listContainer])
+             alert("Add input")
+        }
+        else if (newItem.length > 0) { 
+            if(isDuplicated(newItem)){
+                setListContainer([...listContainer])
+                alert("Duplicated please enter another")
+                setNewItem("")
+            }
+            else{
+                setListContainer([...listContainer,newItem])
+                setNewItem("")
+            }
+            
+        } 
+      };
     return (
-        <form onSubmit={formSubmit}  id="add-item">
+        <form onSubmit={checkInput}  id="add-item">
             <input 
             value={newItem} 
             onChange={e=>setNewItem(e.target.value)}
             placeholder="Add an item"
             />
-            <button id="submit-item" onClick={formSubmit} type="submit" >Add Item</button>
+            <button id="submit-item" onClick={checkInput} type="submit" >Add Item</button>
             <div >
             
                 </div>
