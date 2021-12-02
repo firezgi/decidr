@@ -5,10 +5,14 @@ import React, { useState } from 'react';
 function AddItem({listContainer,setListContainer}) {
     const[newItem,setNewItem]=useState("");
     const isDuplicated=( val) =>
-        listContainer.some((arrVal)=>  val.toLowerCase() === arrVal )
+        listContainer.some((arrVal)=>  val.toLowerCase() === arrVal.toLowerCase() )
     const checkInput = (event) => {
         event.preventDefault();
-        if(newItem.length === 0){
+        if(newItem === " "){
+            setListContainer([...listContainer])
+             alert("Add input")
+        }
+        else if(newItem.length === 0){
             setListContainer([...listContainer])
              alert("Add input")
         }
