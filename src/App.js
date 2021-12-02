@@ -8,7 +8,13 @@ function App() {
   const [selectedItem, setSelectedItem] = useState("");
   const selectItem = () => {
     const random = Math.floor(Math.random() * listContainer.length);
-    setSelectedItem(listContainer.length > 0 ? listContainer[random] : "");
+    if(listContainer.length <=1){
+      setSelectedItem("");
+      alert("The list must contain at least 2 items")
+    }
+    else if(listContainer.length >1){
+      setSelectedItem(listContainer[random]);
+    }
   };
   return (
     <div className="App">
@@ -32,7 +38,7 @@ function App() {
         </div>
       </main>
       <footer>
-        <button onClick={selectItem}>Select an Item</button>
+      <button onClick={selectItem}>Select an Item</button>
       </footer>
     </div>
   );
