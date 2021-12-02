@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">Decidr</header>
+      {listContainer.length?<p>Number of Items: {listContainer.length}</p>:""}
 
       <main>
         <AddItem
