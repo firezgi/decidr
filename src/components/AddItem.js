@@ -19,7 +19,7 @@ function AddItem({listContainer,setListContainer}) {
         else if (newItem.length > 0) { 
             if(isDuplicated(newItem)){
                 setListContainer([...listContainer])
-                alert("Duplicated please enter another")
+                alert("Duplicated :Please enter another")
                 setNewItem("")
             }
             else{

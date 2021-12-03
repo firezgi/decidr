@@ -8,38 +8,50 @@ function App() {
   const [selectedItem, setSelectedItem] = useState("");
   const selectItem = () => {
     const random = Math.floor(Math.random() * listContainer.length);
-    if(listContainer.length <=1){
+    if (listContainer.length <= 1) {
       setSelectedItem("");
-      alert("The list must contain at least 2 items")
-    }
-    else if(listContainer.length >1){
+      alert("The list must contain at least 2 items");
+    } else if (listContainer.length > 1) {
       setSelectedItem(listContainer[random]);
     }
   };
+  const deleteAllHandler = () =>
+    setListContainer(listContainer.filter((item) => item !== item));
   return (
     <div className="App">
       <header className="App-header">Decidr</header>
-      {listContainer.length?<p>Number of Items: {listContainer.length}</p>:""}
-  
+      {listContainer.length ? (
+        <p>Number of Items: {listContainer.length}</p>
+      ) : (
+        ""
+      )}
+      <AddItem
+        listContainer={listContainer}
+        setListContainer={setListContainer}
+      />
 
       <main>
-        <AddItem
-          listContainer={listContainer}
-          setListContainer={setListContainer}
-        />
-        <div>{listContainer.length<2 && <h4>Please enter atleast two items</h4>}</div>
-        <div >
+        <div>
+          {listContainer.length < 2 && <h3>Please enter atleast two items</h3>}
+        </div>
+        <div>
           {selectedItem.length ? (
             <p className="selectedItem">{selectedItem}</p>
           ) : (
-            <DisplayList 
-            listContainer={listContainer}
-            setListContainer={setListContainer} />
+            <DisplayList
+              listContainer={listContainer}
+              setListContainer={setListContainer}
+            />
           )}
         </div>
       </main>
       <footer>
-      <button onClick={selectItem}>Select an Item</button>
+        {listContainer.length > 0 && (
+          <button onClick={() => deleteAllHandler()}>Clear list</button>
+        )}
+        <button id="footerbtn" onClick={selectItem}>
+          Select an Item
+        </button>
       </footer>
     </div>
   );

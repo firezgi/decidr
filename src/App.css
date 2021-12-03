@@ -47,7 +47,7 @@
   margin-left: 5px;
 }
 main {
-  overflow: hidden;
+  overflow: auto;
 }
 button {
   background-color: #004ba1;
@@ -59,17 +59,16 @@ button {
 #listbtn{
   margin: 15px;
 }
+#footerbtn{
+  margin-left: 5px;
+}
 #item{
   margin-left: 4px;
 }
 #add-item {
   height: 50px;
 }
-ol {
-  /* display: */
-  overflow: auto;
-  color: rgb(16, 10, 92);
-}
+
 footer {
   /* height:50px; */
   padding: 5px;
@@ -88,6 +87,7 @@ footer {
   }
   main {
     flex: 1 1 auto;
+    overflow: auto;
   }
   footer {
     flex: 0 0 auto;
