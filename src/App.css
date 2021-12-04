@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  /* background-color: rgb(219, 212, 212); */
 }
 .App {
   display: flex;
