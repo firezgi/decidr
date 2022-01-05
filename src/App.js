@@ -1,11 +1,12 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddItem from "./components/AddItem";
 import DisplayList from "./components/DisplayList";
 
 function App() {
   const [listContainer, setListContainer] = useState([]);
   const [selectedItem, setSelectedItem] = useState("");
+  
   const selectItem = () => {
     const random = Math.floor(Math.random() * listContainer.length);
     if (listContainer.length <= 1) {
@@ -17,6 +18,20 @@ function App() {
   };
   const deleteAllHandler = () =>
     setListContainer(listContainer.filter((item) => item !== item));
+  
+    useEffect(() => {
+      setListContainer(
+        JSON.parse(
+          window.localStorage.getItem('listContainer')||'[]'
+        )
+      )    
+      }, []);
+
+      const updateLocalStorage =(arr)=>{
+        window.localStorage.setItem('listContainer',JSON.stringify(arr));
+        setListContainer(arr);
+      }  
+  
   return (
     <div className="App">
       <header className="App-header">Decidr</header>
@@ -27,7 +42,7 @@ function App() {
       )}
       <AddItem
         listContainer={listContainer}
-        setListContainer={setListContainer}
+        setListContainer={updateLocalStorage}
       />
 
       <main>
@@ -40,7 +55,7 @@ function App() {
           ) : (
             <DisplayList
               listContainer={listContainer}
-              setListContainer={setListContainer}
+              setListContainer={updateLocalStorage}
             />
           )}
         </div>
